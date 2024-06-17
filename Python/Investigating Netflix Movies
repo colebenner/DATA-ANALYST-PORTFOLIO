@@ -9,12 +9,16 @@ import matplotlib.pyplot as plt
 
 # Read in CSV
 netflix_df = pd.read_csv('netflix_data.csv')
+
 # Filter out TV shows
 netflix_subset = netflix_df[netflix_df['type'] != 'TV Show']
+
 # Subset for netflix movies
 netflix_movies = netflix_subset[["title", "country", "genre", "release_year", "duration"]]
+
 # Subset for short movies
 short_movies = netflix_movies.query("duration < 60")
+
 # Assign different colors to different movie genres
 colors = []
 for label, row in netflix_movies.iterrows():
@@ -27,6 +31,7 @@ for label, row in netflix_movies.iterrows():
     else:
         colors.append('yellow')
 colors[:10]
+
 # Plot a scatterplot utilizing the genre colors to visualize movie duration by year of release
 fig = plt.figure(figsize=(12,8))
 plt.scatter(netflix_movies.release_year, netflix_movies.duration, c = colors)
