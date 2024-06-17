@@ -1,0 +1,52 @@
+This project explores several questions surrounding a dataset of Nobel Prize winners. I'll identify the most commonly awarded gender and 
+birth country, stored as 'top_gender' and 'top_country'. Next, I'll find which decade and Nobel Prize combination 
+
+
+
+# Loading in required libraries
+import pandas as pd
+import seaborn as sns
+import numpy as np
+
+# Read in and preview data
+nobel = pd.read_csv('data/nobel.csv')
+nobel.head()
+
+# Which is the most commonly awarder gender and birth country?
+top_gender = nobel['sex'].value_counts().index[0]
+top_country = nobel['birth_country'].value_counts().index[0]
+print(top_gender)
+print(top_country)
+
+# Which decade had the highest ratio of US-born Nobel Prize winners to total winners in all categories?
+nobel['us_born'] = nobel["birth_country"] == 'United States of America'
+print(nobel['us_born'])
+nobel['decade'] = ((np.floor(nobel['year']/10)) * 10).astype(int)
+nobel['ratio'] = nobel.groupby('decade')['us_born'].transform('mean')
+print(nobel['ratio'])
+max_decade_usa = nobel.loc[nobel['ratio'].idxmax()]['decade']
+print(max_decade_usa)
+
+# Which decade and Nobel Prize category combination had the highest proportion of female laureates?
+female_laureates = nobel[nobel['sex'] == 'Female'].groupby(['decade', 'category']).size().reset_index(name='female_laureates')
+merged_df = pd.merge(nobel, female_laureates, on=['decade', 'category'], how='left')
+total_laureates = merged_df.groupby(['decade', 'category']).size().reset_index(name='total_laureates')
+merged_df = pd.merge(merged_df, total_laureates, on=['decade', 'category'], how='left')
+merged_df['proportion_female'] = merged_df['female_laureates'] / merged_df['total_laureates']
+merged_df = merged_df.sort_values(by='proportion_female', ascending=False)
+max_female_dict = merged_df.groupby('decade').first()['category'].to_dict()
+print(max_female_dict)
+
+
+# Who was the first woman to receive a Nobel Prize, and in what category?
+female_l = nobel[nobel['sex'] == 'Female']
+earliest_female_l = female_l.loc[female_l['year'].idxmin()]
+first_woman_name = earliest_female_l['full_name']
+first_woman_category = earliest_female_l['category']
+print(first_woman_name, first_woman_category)
+
+# Which individuals or organizations have won more than one Nobel Prize throughout the years?
+prizes_per_recipient = nobel.groupby('full_name')['year'].count().reset_index(name='num_prizes')
+multiple = prizes_per_recipient[prizes_per_recipient['num_prizes'] > 1]
+repeat_list = multiple['full_name'].tolist()
+print(repeat_list)
