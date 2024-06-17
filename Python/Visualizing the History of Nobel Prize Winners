@@ -1,5 +1,8 @@
 This project explores several questions surrounding a dataset of Nobel Prize winners. I'll identify the most commonly awarded gender and 
-birth country, stored as 'top_gender' and 'top_country'. Next, I'll find which decade and Nobel Prize combination 
+birth country, stored as 'top_gender' and 'top_country'. Next, I'll find which decade and Nobel Prize combination holds the largest 
+proportion of female laureates. This will be stored as a dictionary, 'max_female_dict', with the decade representing the key and the 
+category as the value. Additionally, I'll highlight the first woman (and her category) to receive the Nobel Prize. And finally, I'll 
+create a list, 'repeat_list', that answers which individuals or organizations have obtained multiple Nobel Prizes.
 
 
 
