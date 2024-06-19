@@ -1,4 +1,6 @@
-This short project utilizes a dataset containing product emissions from various companies across several industries. I will query the 
+This short project utilizes a PostgreSQL database containing product emissions from various companies across several industries. I will 
+query the database to find the number of unique companies and their total carbon footprint for each industry group. I'll also filter for 
+the most recent year in the database, returning industry_group, num_companies, and total_industry_footprint.
 
 
 SELECT DISTINCT industry_group, COUNT(DISTINCT company) AS num_companies, ROUND(SUM(carbon_footprint_pcf), 1) AS total_industry_footprint
