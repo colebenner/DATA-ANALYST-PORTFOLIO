@@ -1,0 +1,62 @@
+This project analyzes video game critic and user scores as well as sales data for the top 400 games released since 1977. The queries 
+below will demonstrate my knowledge of joining datasets, filtering, grouping, and ordering data. I'll be finding (1) the 10 best selling 
+games, stored as 'best_selling_games'. Next, I'll identify (2) the 10 years with the highest average critic score where at least 4 games were 
+released. Lastly, I'll point out (3) the years wheres both users and critics agreed on highly rated games, returning the years where average 
+critic score or average user score was over 9. Below, you'll find all columns available in all databases and their respective datatypes.
+
+
+### `game_sales` table
+
+| Column | Definition | Data Type |
+|-|-|-|  
+|name|Name of the video game|`varchar`|
+|platform|Gaming platform|`varchar`|
+|publisher|Game publisher|`varchar`|
+|developer|Game developer|`varchar`|
+|games_sold|Number of copies sold (millions)|`float`|
+|year|Release year|`int`|
+
+### `reviews` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|name|Name of the video game|`varchar`|  
+|critic_score|Critic score according to Metacritic|`float`|
+|user_score|User score according to Metacritic|`float`|
+
+
+### `users_avg_year_rating` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|year| Release year of the games reviewed |`int`|  
+|num_games| Number of games released that year |`int`|
+|avg_user_score| Average score of all the games ratings for the year |`float`|
+
+### `critics_avg_year_rating` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|year| Release year of the games reviewed |`int`|  
+|num_games| Number of games released that year |`int`|
+|avg_critic_score| Average score of all the games ratings for the year |`float`|
+
+(1)
+SELECT *
+FROM game_sales
+ORDER BY games_sold DESC
+LIMIT 10;
+
+(2)
+SELECT DISTINCT T1.year, T1.num_games, avg_critic_score
+FROM users_avg_year_rating T1
+JOIN critics_avg_year_rating T2 ON T1.year = T2.year
+ORDER BY T2.avg_critic_score DESC
+LIMIT 10;
+
+(3)
+SELECT T1.year, T1.num_games, T1.avg_critic_score, T2.avg_user_score, (T1.avg_critic_score - T2.avg_user_score) AS diff
+FROM critics_avg_year_rating T1
+JOIN users_avg_year_rating T2 ON T1.year = T2.year
+WHERE T1.avg_critic_score > 9 OR T2.avg_user_score > 9
+ORDER BY year ASC;
