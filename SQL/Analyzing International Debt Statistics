@@ -31,3 +31,18 @@ WHERE 'DT.AMT.DLXF.CD' = indicator_code
 GROUP BY country_name, indicator_name
 ORDER BY lowest_repayment ASC
 LIMIT 1;
+
+Results:
+1.
+total_distinct_countries
+                     124
+
+2.
+country_name	          total_debt
+       China	      285793494734.2
+
+3.
+country_name	                                                                  indicator_name	                        lowest_repayment
+Timor-Leste	             "Principal repayments on external debt, long-term (AMT, current US$)"	                                  825000
+
+Conclusions:
