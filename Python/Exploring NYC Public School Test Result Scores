@@ -31,3 +31,22 @@ largest_std_dev = boroughs[boroughs["std"] == boroughs["std"].max()]
 # Rename columns
 largest_std_dev = largest_std_dev.rename(columns={"count": "num_schools", "mean": "average_SAT", "std": "std_SAT"})
 print(largest_std_dev)
+
+
+Results:
+                                           school_name  average_math
+88                              Stuyvesant High School           754
+170                       Bronx High School of Science           714
+93                 Staten Island Technical High School           711
+365  Queens High School for the Sciences at York Co...           701
+68   High School for Mathematics, Science, and Engi...           683
+280                     Brooklyn Technical High School           682
+333                        Townsend Harris High School           680
+174  High School of American Studies at Lehman College           669
+0    New Explorations into Science, Technology and ...           657
+45                       Eleanor Roosevelt High School           641
+           num_schools  average_SAT  std_SAT
+borough                                     
+Manhattan           89      1340.13   230.29
+
+Conclusions:
