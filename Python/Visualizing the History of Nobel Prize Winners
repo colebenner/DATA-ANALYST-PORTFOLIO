@@ -53,3 +53,38 @@ prizes_per_recipient = nobel.groupby('full_name')['year'].count().reset_index(na
 multiple = prizes_per_recipient[prizes_per_recipient['num_prizes'] > 1]
 repeat_list = multiple['full_name'].tolist()
 print(repeat_list)
+
+Results:
+Male
+United States of America
+0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+995     True
+996    False
+997    False
+998    False
+999     True
+Name: us_born, Length: 1000, dtype: bool
+0      0.017544
+1      0.017544
+2      0.017544
+3      0.017544
+4      0.017544
+         ...   
+995    0.360000
+996    0.360000
+997    0.360000
+998    0.360000
+999    0.360000
+Name: ratio, Length: 1000, dtype: float64
+2000
+{1900: 'Literature', 1910: 'Chemistry', 1920: 'Literature', 1930: 'Peace', 1940: 'Literature', 1950: 'Chemistry', 1960: 'Literature', 1970: 'Peace', 1980: 'Medicine', 1990: 'Literature', 2000: 'Literature', 2010: 'Peace', 2020: 'Literature'}
+Marie Curie, née Sklodowska Physics
+['Comité international de la Croix Rouge (International Committee of the Red Cross)', 'Frederick Sanger', 'John Bardeen', 'Linus Carl Pauling', 'Marie Curie, née Sklodowska', 'Office of the United Nations High Commissioner for Refugees (UNHCR)']
+
+Conclusions:
+
