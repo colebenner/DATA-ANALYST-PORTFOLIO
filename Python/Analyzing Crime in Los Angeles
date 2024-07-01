@@ -32,3 +32,26 @@ age_labels = ['0-17', '18-25', '26-34', '35-44', '45-54', '55-64', '65+']
 crimes['age_values'] = pd.cut(crimes['Vict Age'], bins=age_bins, labels=age_labels)
 victim_ages = crimes['age_values'].value_counts()
 print(victim_ages)
+
+Results:
+DR_NO	    Date Rptd	              DATE OCC	              TIME OCC	AREA NAME	      Crm Cd Desc	            Vict Age	Vict Sex	Vict Descent	Weapon Desc	    Status Desc	      LOCATION
+220314085	2022-07-22T00:00:00.000	2020-05-12T00:00:00.000	1110	    Southwest	      THEFT OF IDENTITY	      27	      F	        B	            null	          Invest Cont	      2500 S SYCAMORE AV
+222013040	2022-08-06T00:00:00.000	2020-06-04T00:00:00.000	1620	    Olympic	        THEFT OF IDENTITY	      60	      M	        H	            null	          Invest Cont	      3300 SAN MARINO ST
+220614831	2022-08-18T00:00:00.000	2020-08-17T00:00:00.000	1200	    Hollywood	      THEFT OF IDENTITY	      28	      M	        H	            null	          Invest Cont	      1900 TRANSIENT
+231207725	2023-02-27T00:00:00.000	2020-01-27T00:00:00.000	635	      77th Street	    THEFT OF IDENTITY	      37	      M	        H	            null	          Invest Cont	      6200 4TH AV
+220213256	2022-07-14T00:00:00.000	2020-07-14T00:00:00.000	900	      Rampart	        THEFT OF IDENTITY	      79	      M	        B	            null	          Invest Cont	      1200 W 7TH ST
+
+
+12
+Central
+26-34    47470
+35-44    42157
+45-54    28353
+18-25    28291
+55-64    20169
+65+      14747
+0-17      4528
+Name: age_values, dtype: int64
+
+Conclusions:
+
