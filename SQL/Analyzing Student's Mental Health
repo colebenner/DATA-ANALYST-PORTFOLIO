@@ -1,4 +1,8 @@
-This project evaluates data on students from a Japanese international university in 2018. This data was used to publish a study that identified a higher risk of mental health issues in international students. I will query the same data with the intention of identifying the same trends. I will first, (1) view all data to grasp the extent of what I'm working with. Then second, (2) query the data to find the amount of international students 
+This project evaluates data on students from a Japanese international university in 2018. This data was used to publish a study that 
+identified a higher risk of mental health issues in international students. I will utilize PostgreSQL to query the same data with the 
+intention of identifying the same trends. I will first, (1) view all data to grasp the extent of what I'm working with. Then second, (2) 
+query the data to find the amount of international students, the average PHQ-9 test score, the average SCS test score, and the average 
+ASISS test score.
 
 
 (1)
@@ -15,3 +19,17 @@ FROM students
 WHERE inter_dom = 'Inter'
 GROUP BY stay
 ORDER BY stay DESC;
+
+Results:
+stay	              count_int	            average_phq	             average_scs	              average_as
+10	                      1	                     13	                      32	                      50
+8	                      1	                     10	                      44	                      65
+7	                      1	                      4	                      48	                      45
+6	                      3	                      6	                      38	                   58.67
+5	                      1	                      0	                      34	                      91
+4	                     14	                   8.57	                   33.93	                   87.71
+3	                     46	                   9.09	                   37.13	                      78
+2	                     39	                   8.28	                   37.08	                   77.67
+1	                     95	                   7.48	                   38.11	                    72.8
+
+Conclusions:
