@@ -32,8 +32,7 @@ men_subset["goals_scored"].hist()
 plt.show()
 plt.clf()
 
-# Goals scored is not normally distributed, so use Wilcoxon-Mann-Whitney test of two groups
-men_subset["goals_scored"].hist()
+women_subset["goals_scored"].hist()
 plt.show()
 plt.clf()
 
@@ -67,6 +66,8 @@ result_dict = {"p_val": p_val, "result": result}
 print(result_dict)
 
 Results:
+![Men's Goal Scoring Subset Graph](Men's Goal Scored Subset.png)
+![Women's Goal Scoring Subset Graph](Women's Goal Scored Subset.png)
 {'p_val': 0.005106609825443641, 'result': 'reject'}
 
 Conclusions:
