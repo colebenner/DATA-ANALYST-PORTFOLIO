@@ -1,8 +1,8 @@
 This project evaluates data on students from a Japanese international university in 2018. This data was used to publish a study that 
 identified a higher risk of mental health issues in international students. I will utilize PostgreSQL to query the same data with the 
 intention of identifying the same trends. I will first, (1) view all data to grasp the extent of what I'm working with. Then second, (2) 
-query the data to find the amount of international students, the average PHQ-9 test score, the average SCS test score, and the average 
-ASISS test score.
+query the data to find the amount of international students & their length of stay in years, the average PHQ-9 test score (depression), the average SCS test score (social connectedness), and the average 
+ASISS test score (acculturative stress).
 
 
 (1)
@@ -33,3 +33,19 @@ stay	              count_int	            average_phq	             average_scs	  
 1	                     95	                   7.48	                   38.11	                    72.8
 
 Conclusions:
+While looking at length of stay when compared to average_phq, average_scs, and average_as multiple takeaways jump out at me. The study 
+mentioned indicates that international students have a higher risk of mental health difficulties than the general population, and that 
+social connectedness (belonging to a social group) and acculturative stress (stress associated with joining a new culture) are 
+predictive of depression. However, what I see when analyzing these trends is slightly different with perspective. None of the 3 variables
+mentioned show a continuous linear trend. Average_phq is highest at a stay length of 10 years, but there also exists a window in years 5-7 
+where international students appear depression free, or close to it. Average_scs score starts relatively high, progressively drops over 
+the years, and then proceeds to climb once again. I'd interpret this to mean that international students place priority on fitting in when 
+they arrive in a foreign country and as time passes, become focused on their own personal endeavors and the reasons that traveled in the 
+first place. Eventually, they find their groove and begin to grow their social connectedness again. This trend seems not only natural in 
+my eyes, but healthly. Finally, average_as also starts relatively high and continues to climb until year 5 when international students 
+appear to drastically become more accustomed to the culture around them. Once again, a natural introduction to a new environment. 
+Ultimately, a wave of initial depression when moving by yourself to a new country does not stray far from the realm of reality. And an 
+rapid increase in depression 8-10 years into an international stay could be due to a variety of possibilities. The trends I see through 
+this data is consistent with natural tendencies, and I do not believe to be worrisome when considering the big picture.
+
+
