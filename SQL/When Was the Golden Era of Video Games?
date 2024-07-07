@@ -98,3 +98,17 @@ year	          num_games	          avg_critic_score	          avg_user_score	   
 2010	                 23	                      8.41	                     9.24	          -0.83
 
 Conclusions:
+The results from query (1) are crystal clear. Wii Sports far outsells any other game, doubling the amount of games sold for the second 
+most sold game. Some other details that stick out include Nintendo takes 7 of 10 publishing/developing spots and 8 of 10 spots belong to 
+games published after 2005.
+
+Query (2) features the 10 highest average critic scores per year with more than 4 games released in that year. 1998 took the top 
+score with 1999, 2002 & 2004 all holding top 5 rankings. We can infer that developers/publishers could have found common ground 
+with the characteristics of their games that peaked the interest of the critics. 
+
+Query (3) identifies similar trends as query (2) but adds average user score to the mix, gaining the perspective of the more important 
+opinions on games. Critics were spot on with games in 1998 as users had just about the same score with a -0.08 difference. However, 
+ratings for 1999 and 2002 weren't nearly as close. 2004 did make the list with a 0.48 difference between user and critic. Our theory in 
+the last paragraph has some validity but may not be as concrete or consistent as suggested by query (2).
+
+
