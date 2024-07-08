@@ -45,8 +45,18 @@ Results:
 174  High School of American Studies at Lehman College           669
 0    New Explorations into Science, Technology and ...           657
 45                       Eleanor Roosevelt High School           641
+
+
            num_schools  average_SAT  std_SAT
 borough                                     
 Manhattan           89      1340.13   230.29
 
 Conclusions:
+The above results detail a list of the highest scoring schools in SAT math scores and then singles out the borough with the largest SAT 
+standard deviation. We can observe that 5/10 of the top average math SAT scores come from high schools specializes in sciences or 
+technical skills. This is an expected result as the students in these schools will focus more on math, or will have come into the schools 
+with more of an interest in math. The result of Manhattan being the borough with the largest SAT standard deviation also follows logic due 
+to the abundance of schools, students, and population in the area. With more and more students taking the test, there will be a wider 
+range of ability and thus, a larger standard deviation.
+
+
