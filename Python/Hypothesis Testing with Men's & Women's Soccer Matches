@@ -66,8 +66,16 @@ result_dict = {"p_val": p_val, "result": result}
 print(result_dict)
 
 Results:
-![Men's Goal Scoring Subset Graph](DATA-ANALYST-PORTFOLIO/Men's Goal Scored Subset.png)
-![Women's Goal Scoring Subset Graph](DATA-ANALYST-PORTFOLIO/Women's Goal Scored Subset.png)
 {'p_val': 0.005106609825443641, 'result': 'reject'}
 
 Conclusions:
+There are two graphs in the DATA-ANALYST-PORTFOLIO directory visualizing Men's and Women's Goal Scoring Subsets via histograms. By 
+visualizing these subsets, we can see that both the Men and Women subsets are skewed right. With similar shaped distributions, and an 
+intention of determining if one group has a higher value than the other, it follows that using a Wilcoxon-Mann-Whitney test best suits 
+this hypothesis test.
+
+The final result above renders our conclusion incredibly simple: the p-value of 0.0051 is less than our significance level of 0.01 which 
+means we reject the null hypothesis. Since our null hypothesis states that the mean number of goals scored in women's international 
+soccer matches is the same as men's, we can now confirm that the mean number of goals scored in women's international soccer matches is 
+not the same as men's mean scores. In fact, by rejecting the null, we have proved that our alternative hypothesis is true, meaning that 
+the mean amount of goals scored in women's matches is greater than the mean amount of goals scored in men's matches.
