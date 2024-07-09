@@ -56,7 +56,9 @@ print(repeat_list)
 
 Results:
 Male
+
 United States of America
+
 0      False
 1      False
 2      False
@@ -69,6 +71,7 @@ United States of America
 998    False
 999     True
 Name: us_born, Length: 1000, dtype: bool
+
 0      0.017544
 1      0.017544
 2      0.017544
@@ -81,10 +84,24 @@ Name: us_born, Length: 1000, dtype: bool
 998    0.360000
 999    0.360000
 Name: ratio, Length: 1000, dtype: float64
+
 2000
-{1900: 'Literature', 1910: 'Chemistry', 1920: 'Literature', 1930: 'Peace', 1940: 'Literature', 1950: 'Chemistry', 1960: 'Literature', 1970: 'Peace', 1980: 'Medicine', 1990: 'Literature', 2000: 'Literature', 2010: 'Peace', 2020: 'Literature'}
+
+{1900: 'Literature', 1910: 'Chemistry', 1920: 'Literature', 1930: 'Peace', 1940: 'Literature', 1950: 'Chemistry', 1960: 'Literature', 
+1970: 'Peace', 1980: 'Medicine', 1990: 'Literature', 2000: 'Literature', 2010: 'Peace', 2020: 'Literature'}
+
 Marie Curie, née Sklodowska Physics
-['Comité international de la Croix Rouge (International Committee of the Red Cross)', 'Frederick Sanger', 'John Bardeen', 'Linus Carl Pauling', 'Marie Curie, née Sklodowska', 'Office of the United Nations High Commissioner for Refugees (UNHCR)']
+
+['Comité international de la Croix Rouge (International Committee of the Red Cross)', 'Frederick Sanger', 'John Bardeen', 'Linus Carl 
+Pauling', 'Marie Curie, née Sklodowska', 'Office of the United Nations High Commissioner for Refugees (UNHCR)']
 
 Conclusions:
-
+The results above feature 7 answers to questions inquired about in the pre-project summary. First, the top gender and top country are 
+identified as 'Male' and 'United States of America'. Next, the result '2000' highlights the decade with the highest ratio of US-born 
+Nobel Prize winners to total winners in all categories. The following dictionary shows each decade and their largest respective Nobel 
+Prize category for female laureates (ex. Female laureates won their most Nobel Prizes in the Literature category in the 1900s). Moving 
+on to the next result of 'Marie Curie, née Sklodowska Physics', we see the first woman to win a Nobel Prize and the category she 
+received it in. Lasty, the final dictionary details a 'repeat_list', effectively listing every individual who has won multiple Nobel 
+Prizes, or organizations who have more than 1 Nobel Prize under their belt. All these results are fairly straight forward and do not 
+require any further analysis as they've happened in the past. We could use the data to determine future probabilities of where Nobel 
+Prize winning candidates may reside around the planet, or which gender may be more likely to win NPs going forward.
